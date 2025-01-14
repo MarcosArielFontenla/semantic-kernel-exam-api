@@ -15,6 +15,11 @@ namespace SemanticKernel.ExamNotes.API.Controllers
             _examService = examService;
         }
 
+        /// <summary>
+        /// Evaluate an exam
+        /// </summary>
+        /// <param name="exam"></param>
+        /// <returns></returns>
         [HttpPost("evaluate")]
         public async Task<IActionResult> EvaluateExam([FromBody] Exam exam)
         {
