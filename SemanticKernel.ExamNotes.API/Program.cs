@@ -23,6 +23,7 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddScoped<IExamService, ExamService>();
 builder.Services.AddScoped<IGeminiService, GeminiService>();
+builder.Services.AddScoped<IFileTextExtractorService, FileTextExtractorService>();
 
 #pragma warning disable SKEXP0070
 builder.Services.AddKernel();

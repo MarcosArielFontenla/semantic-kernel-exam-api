@@ -11,13 +11,14 @@ namespace SemanticKernel.ExamNotes.Data.PrompTypes.CoT
                     Evaluate the student's answers step by step. For each question:
 
                     - Determine if the answer is relevant to the question.
+                    - Compare the student's answer with the correct answer.
                     - Assess the clarity and detail of the answer.
                     - Check if examples or additional context are provided.
                     - Assign a score for the individual question and explain why.
 
                     Questions and Student Answers:
                     {string.Join("\n", exam.Questions.Select(q =>
-                       $"- Question: {q.QuestionText}\n  Student Answer: {q.StudentAnswer}"))}
+                       $"- Question: {q.QuestionText}\n Correct Answer: {q.CorrectAnswer}\n Student Answer: {q.StudentAnswer}"))}
 
                     Finally, provide an overall evaluation in JSON format:
                     {{

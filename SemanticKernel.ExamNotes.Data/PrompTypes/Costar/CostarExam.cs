@@ -15,13 +15,13 @@ namespace SemanticKernel.ExamNotes.Data.PrompTypes.Costar
 
                     Steps:
                     1. Analyze the student's response.
-                    2. Compare it to an ideal answer (if necessary).
+                    2. Compare it to the correct answer.
                     3. Assign a score based on relevance, clarity, and completeness.
                     4. Provide constructive feedback.
 
                     Questions and Student Answers:
                     {string.Join("\n", exam.Questions.Select(q =>
-                       $"- Question: {q.QuestionText}\n  Student Answer: {q.StudentAnswer}"))}
+                       $"- Question: {q.QuestionText}\n Correct Answer: {q.CorrectAnswer}\n Student Answer: {q.StudentAnswer}"))}
 
                     Alternatives:
                     You can structure the response as follows:

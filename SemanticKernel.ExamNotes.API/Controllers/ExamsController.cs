@@ -21,14 +21,14 @@ namespace SemanticKernel.ExamNotes.API.Controllers
         /// <param name="exam"></param>
         /// <returns></returns>
         [HttpPost("evaluate")]
-        public async Task<IActionResult> EvaluateExam([FromBody] Exam exam)
+        public async Task<IActionResult> EvaluateExam([FromBody] Exam exam, CancellationToken cancelationToken)
         {
             if (exam is null || string.IsNullOrWhiteSpace(exam.Subject) || !exam.Questions.Any())
             {
                 return BadRequest("the exam payload is invalid.");
             }
 
-            var (score, feedback) = await _examService.EvaluateExamAsync(exam);
+            var (score, feedback) = await _examService.EvaluateExamAsync(exam, cancelationToken);
 
             var response = new
             {

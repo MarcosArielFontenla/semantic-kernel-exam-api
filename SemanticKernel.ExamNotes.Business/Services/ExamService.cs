@@ -12,9 +12,9 @@ namespace SemanticKernel.ExamNotes.Business.Services
             _geminiService = geminiService;
         }
 
-        public async Task<(int score, string feedback)> EvaluateExamAsync(Exam exam)
+        public async Task<(int score, string feedback)> EvaluateExamAsync(Exam exam, CancellationToken cancelationToken)
         {
-            return await _geminiService.EvaluateExamAsync(exam);
+            return await _geminiService.EvaluateExamAsync(exam, cancelationToken);
         }
     }
 }

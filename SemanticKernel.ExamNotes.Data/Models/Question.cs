@@ -4,5 +4,6 @@
     {
         public string QuestionText { get; set; } = string.Empty;
         public string StudentAnswer { get; set; } = string.Empty;
+        public string CorrectAnswer { get; set; } = string.Empty;
     }
 }
